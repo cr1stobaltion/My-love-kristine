@@ -1,0 +1,3263 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="theme-color" content="#650f16">
+
+<title>A Little Question for You ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+>
+
+<style>
+
+:root{
+
+    --wine:#650f16;
+    --wine-dark:#43080d;
+    --wine-deep:#300509;
+
+    --red:#861b23;
+    --red-light:#a92e36;
+
+    --cream:#fff8f0;
+    --cream-soft:#f8e8dc;
+
+    --pink:#f5d8d7;
+    --rose:#e9b9b3;
+
+    --gold:#e7bd8b;
+    --gold-light:#f3d5ae;
+
+    --text:#fff4e9;
+    --muted:#e8c9bd;
+
+    --shadow:rgba(35,3,7,.38);
+
+    --serif:'Cormorant Garamond',serif;
+    --display:'Playfair Display',serif;
+    --script:'Great Vibes',cursive;
+    --sans:'DM Sans',sans-serif;
+
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    min-height:100vh;
+
+    background:
+        radial-gradient(
+            circle at 20% 10%,
+            rgba(255,190,180,.08),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(231,189,139,.06),
+            transparent 30%
+        ),
+        var(--wine-dark);
+
+    color:var(--text);
+
+    font-family:var(--serif);
+
+    overflow-x:hidden;
+
+    -webkit-tap-highlight-color:transparent;
+
+}
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:999;
+
+    opacity:.055;
+
+    background-image:
+        radial-gradient(
+            #fff 1px,
+            transparent 1px
+        );
+
+    background-size:22px 22px;
+
+}
+
+.scroll-progress{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:0%;
+    height:3px;
+
+    z-index:2000;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--gold),
+            #fff0dc,
+            var(--rose)
+        );
+
+    box-shadow:
+        0 0 15px rgba(243,213,174,.8);
+
+}
+
+section{
+
+    min-height:100svh;
+
+    padding:
+        clamp(70px,9vw,110px)
+        22px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.wrap{
+
+    width:min(1120px,100%);
+
+    margin:auto;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.kicker{
+
+    font-family:var(--sans);
+
+    font-size:.72rem;
+
+    font-weight:600;
+
+    letter-spacing:.28em;
+
+    text-transform:uppercase;
+
+    color:var(--gold-light);
+
+}
+
+.script{
+
+    font-family:var(--script);
+
+    font-weight:400;
+
+}
+
+h1,
+h2,
+h3,
+p{
+
+    margin:0;
+
+}
+
+h1{
+
+    font-family:var(--script);
+
+    font-size:
+        clamp(
+            4.2rem,
+            12vw,
+            9rem
+        );
+
+    line-height:.86;
+
+    font-weight:400;
+
+    color:#fff8f0;
+
+    text-shadow:
+        0 8px 35px rgba(30,0,3,.6);
+
+}
+
+h2{
+
+    font-family:var(--script);
+
+    font-size:
+        clamp(
+            3.3rem,
+            7vw,
+            6rem
+        );
+
+    line-height:.9;
+
+    color:#ffe8dd;
+
+    font-weight:400;
+
+}
+
+p{
+
+    color:var(--muted);
+
+}
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(35px);
+
+    transition:
+        opacity .9s ease,
+        transform .9s cubic-bezier(.2,.8,.2,1);
+
+}
+
+.reveal.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.hero{
+
+    text-align:center;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 15%,
+            #b43a42 0%,
+            #861b23 40%,
+            #560b11 75%,
+            #35060a 100%
+        );
+
+}
+
+.hero::after{
+
+    content:"♡";
+
+    position:absolute;
+
+    right:-90px;
+    bottom:-170px;
+
+    font-size:34rem;
+
+    line-height:1;
+
+    color:rgba(255,255,255,.025);
+
+    transform:rotate(-16deg);
+
+    pointer-events:none;
+
+}
+
+.hero::before{
+
+    content:"✦  ·  ♡  ·  ✦";
+
+    position:absolute;
+
+    top:12%;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:rgba(255,230,210,.25);
+
+    letter-spacing:1.5rem;
+
+    font-size:1rem;
+
+}
+
+.hero-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+.hero .lead{
+
+    max-width:650px;
+
+    margin:
+        28px
+        auto
+        0;
+
+    font-size:
+        clamp(
+            1.25rem,
+            2.4vw,
+            1.6rem
+        );
+
+    line-height:1.45;
+
+}
+
+.photo-frame{
+
+    width:min(360px,80vw);
+
+    margin:
+        48px
+        auto
+        36px;
+
+    padding:
+        12px
+        12px
+        42px;
+
+    background:#fffaf4;
+
+    transform:rotate(-2deg);
+
+    box-shadow:
+        0 30px 80px rgba(30,0,4,.55);
+
+    position:relative;
+
+    transition:
+        transform .4s ease;
+
+}
+
+.photo-frame:hover{
+
+    transform:
+        rotate(0deg)
+        translateY(-7px);
+
+}
+
+.photo-frame::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-16px;
+
+    left:34%;
+
+    width:32%;
+
+    height:32px;
+
+    background:
+        rgba(232,201,168,.8);
+
+    transform:rotate(2deg);
+
+}
+
+.photo-frame img{
+
+    width:100%;
+
+    height:360px;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+.photo-caption{
+
+    position:absolute;
+
+    bottom:8px;
+
+    left:0;
+    right:0;
+
+    color:#76191e;
+
+    text-align:center;
+
+    font:
+        italic 1.15rem
+        var(--display);
+
+}
+
+.scroll-indicator{
+
+    margin-top:35px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#eac7b4;
+
+    font-family:var(--sans);
+
+    font-size:.7rem;
+
+    letter-spacing:.2em;
+
+    text-transform:uppercase;
+
+    opacity:.75;
+
+}
+
+.scroll-line{
+
+    width:1px;
+
+    height:45px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            var(--gold)
+        );
+
+    animation:
+        scrollPulse 2s infinite;
+
+}
+
+@keyframes scrollPulse{
+
+    0%,
+    100%{
+        opacity:.3;
+        transform:scaleY(.7);
+    }
+
+    50%{
+        opacity:1;
+        transform:scaleY(1);
+    }
+
+}
+
+.scrap{
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255,255,255,.035),
+            transparent 30%
+        ),
+        #861b23;
+
+}
+
+.scrap.alt{
+
+    background:
+        radial-gradient(
+            circle at 85% 30%,
+            rgba(255,255,255,.04),
+            transparent 30%
+        ),
+        #620f16;
+
+}
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1fr)
+        minmax(0,1fr);
+
+    gap:
+        clamp(30px,6vw,75px);
+
+    align-items:center;
+
+}
+
+.copy-card{
+
+    position:relative;
+
+    padding:
+        clamp(28px,5vw,52px);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(111,17,25,.95),
+            rgba(67,8,14,.72)
+        );
+
+    border:
+        1px solid
+        rgba(232,189,155,.7);
+
+    box-shadow:
+        0 25px 70px
+        rgba(35,3,7,.3);
+
+}
+
+.copy-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:8px;
+
+    border:
+        1px solid
+        rgba(232,189,155,.22);
+
+    pointer-events:none;
+
+}
+
+.copy-card h2{
+
+    margin:
+        18px
+        0
+        24px;
+
+}
+
+.copy-card p{
+
+    font-size:
+        clamp(
+            1.25rem,
+            2vw,
+            1.42rem
+        );
+
+    line-height:1.55;
+
+}
+
+.polaroids{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:20px;
+
+}
+
+.polaroid{
+
+    background:#fffaf4;
+
+    padding:
+        10px
+        10px
+        38px;
+
+    color:#74151a;
+
+    box-shadow:
+        0 18px 40px
+        rgba(25,0,3,.35);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.polaroid:nth-child(1){
+    transform:rotate(-4deg);
+}
+
+.polaroid:nth-child(2){
+    transform:rotate(5deg) translateY(30px);
+}
+
+.polaroid:nth-child(3){
+    transform:rotate(3deg) translateY(-20px);
+}
+
+.polaroid:nth-child(4){
+    transform:rotate(-3deg) translateY(10px);
+}
+
+.polaroid:hover{
+
+    transform:
+        rotate(0)
+        translateY(-8px)
+        scale(1.02);
+
+    box-shadow:
+        0 28px 55px
+        rgba(25,0,3,.45);
+
+}
+
+.polaroid img{
+
+    width:100%;
+
+    height:190px;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+.polaroid span{
+
+    display:block;
+
+    padding-top:10px;
+
+    text-align:center;
+
+    font:
+        italic 1rem
+        var(--display);
+
+}
+
+.music-card{
+
+    position:relative;
+
+    padding:
+        clamp(20px,3vw,30px);
+
+    background:
+        linear-gradient(
+            145deg,
+            #ad3038,
+            #721119
+        );
+
+    border:
+        1px solid
+        rgba(245,216,200,.7);
+
+    box-shadow:
+        0 30px 70px
+        rgba(40,0,5,.42);
+
+    transform:rotate(1deg);
+
+    transition:
+        transform .4s ease;
+
+}
+
+.music-card:hover{
+
+    transform:
+        rotate(0)
+        translateY(-5px);
+
+}
+
+.record{
+
+    width:
+        min(300px,68vw);
+
+    aspect-ratio:1;
+
+    margin:
+        0
+        auto
+        25px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    position:relative;
+
+    border:
+        6px solid
+        rgba(255,239,222,.9);
+
+    box-shadow:
+        0 20px 50px
+        rgba(30,0,4,.5);
+
+}
+
+.record::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            rgba(255,255,255,.18),
+            transparent 30%
+        );
+
+    pointer-events:none;
+
+}
+
+.record img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+.music-card.playing .record img{
+
+    animation:
+        recordSpin 12s linear infinite;
+
+}
+
+@keyframes recordSpin{
+
+    from{
+        transform:rotate(0deg) scale(1.02);
+    }
+
+    to{
+        transform:rotate(360deg) scale(1.02);
+    }
+
+}
+
+.music-title{
+
+    text-align:center;
+
+    font-size:
+        clamp(
+            2.5rem,
+            5vw,
+            3.5rem
+        );
+
+    color:#fff1e8;
+
+}
+
+.music-subtitle{
+
+    text-align:center;
+
+    margin-top:5px;
+
+    color:#f5d8d7;
+
+    font-family:var(--sans);
+
+    font-size:.78rem;
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+
+}
+
+.music-player{
+
+    margin:
+        26px
+        auto
+        10px;
+
+    padding:18px;
+
+    width:100%;
+
+    background:
+        rgba(54,5,10,.78);
+
+    border:
+        1px solid
+        rgba(245,216,200,.5);
+
+    border-radius:18px;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.06),
+        0 15px 35px rgba(30,0,4,.28);
+
+    backdrop-filter:blur(10px);
+
+}
+
+.player-top{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.play-button{
+
+    flex-shrink:0;
+
+    width:58px;
+    height:58px;
+
+    border-radius:50%;
+
+    border:
+        2px solid
+        var(--cream);
+
+    background:
+        var(--cream);
+
+    color:var(--wine);
+
+    font-size:1.15rem;
+
+    cursor:pointer;
+
+    display:grid;
+
+    place-items:center;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+
+}
+
+.play-button:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.3);
+
+}
+
+.play-button:active{
+
+    transform:scale(.94);
+
+}
+
+.player-info{
+
+    flex:1;
+
+    min-width:0;
+
+}
+
+.song-name{
+
+    color:#fff2e7;
+
+    font-family:var(--display);
+
+    font-weight:600;
+
+    font-size:.95rem;
+
+    margin-bottom:10px;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+}
+
+.progress-container{
+
+    width:100%;
+
+    height:9px;
+
+    background:
+        rgba(255,255,255,.16);
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.progress-bar{
+
+    width:0%;
+
+    height:100%;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--gold),
+            #fff0dc
+        );
+
+}
+
+.time-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:6px;
+
+    color:#d9b8aa;
+
+    font-family:var(--sans);
+
+    font-size:.7rem;
+
+}
+
+.volume-row{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    margin-top:14px;
+
+    color:#ffe8dd;
+
+}
+
+.volume-row input{
+
+    width:130px;
+
+    accent-color:
+        var(--gold);
+
+    cursor:pointer;
+
+}
+
+.play-hint{
+
+    text-align:center;
+
+    margin-top:13px;
+
+    color:#f7dcd0;
+
+    font-family:var(--sans);
+
+    font-size:.72rem;
+
+    letter-spacing:.08em;
+
+    opacity:.8;
+
+}
+
+.letter{
+
+    max-width:750px;
+
+    margin:auto;
+
+    padding:
+        clamp(30px,7vw,70px);
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffaf4,
+            #f7e8dc
+        );
+
+    color:#5c2527;
+
+    box-shadow:
+        0 30px 80px
+        rgba(25,0,3,.45);
+
+    transform:rotate(-1deg);
+
+    position:relative;
+
+}
+
+.letter::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:12px;
+
+    border:
+        1px solid
+        #c69b83;
+
+    pointer-events:none;
+
+}
+
+.letter h2{
+
+    color:#8a2228;
+
+    text-align:center;
+
+    margin:
+        15px
+        0
+        30px;
+
+}
+
+.letter p{
+
+    color:#663033;
+
+    font-size:
+        clamp(
+            1.15rem,
+            2vw,
+            1.32rem
+        );
+
+    line-height:1.7;
+
+    white-space:pre-line;
+
+}
+
+.signature{
+
+    text-align:center;
+
+    margin-top:30px;
+
+    font-family:var(--script);
+
+    font-size:2.8rem;
+
+    color:#8a2228;
+
+}
+
+.mail-scene{
+
+    min-height:430px;
+
+    display:grid;
+
+    place-items:center;
+
+    position:relative;
+
+}
+
+.envelope{
+
+    width:min(350px,82vw);
+
+    height:230px;
+
+    position:relative;
+
+    cursor:pointer;
+
+    filter:
+        drop-shadow(
+            0 25px 30px
+            rgba(35,0,5,.45)
+        );
+
+    transition:
+        transform .35s ease;
+
+}
+
+.envelope:hover{
+
+    transform:
+        translateY(-8px)
+        rotate(-1deg);
+
+}
+
+.envelope::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:#d99b81;
+
+    clip-path:
+        polygon(
+            0 0,
+            50% 55%,
+            100% 0,
+            100% 100%,
+            0 100%
+        );
+
+}
+
+.flap{
+
+    position:absolute;
+
+    inset:0;
+
+    background:#f0cdb3;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 62%
+        );
+
+    transform-origin:top;
+
+    transition:
+        transform .7s
+        cubic-bezier(.2,.8,.2,1);
+
+    z-index:3;
+
+}
+
+.seal{
+
+    position:absolute;
+
+    z-index:5;
+
+    left:50%;
+
+    top:46%;
+
+    transform:
+        translate(-50%,-50%);
+
+    width:56px;
+
+    height:56px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #b62c34,
+            #7d1118
+        );
+
+    border:
+        3px solid
+        var(--gold);
+
+    color:#ffe8d8;
+
+    display:grid;
+
+    place-items:center;
+
+    font-size:1.35rem;
+
+    box-shadow:
+        0 8px 20px rgba(40,0,4,.3);
+
+    transition:
+        transform .5s ease,
+        opacity .5s ease;
+
+}
+
+.envelope.open .flap{
+
+    transform:
+        rotateX(180deg);
+
+}
+
+.envelope.open .seal{
+
+    transform:
+        translate(-50%,-50%)
+        scale(.7);
+
+    opacity:0;
+
+}
+
+#question{
+
+    animation:
+        questionReveal .8s ease both;
+
+}
+
+@keyframes questionReveal{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(25px)
+            scale(.97);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+.question-text{
+
+    font-size:
+        clamp(
+            4rem,
+            11vw,
+            7rem
+        );
+
+}
+
+.question-lead{
+
+    max-width:650px;
+
+    margin:
+        15px
+        auto
+        0;
+
+}
+
+.btn-row{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+    margin-top:30px;
+
+}
+
+.btn{
+
+    border:
+        1px solid
+        var(--gold-light);
+
+    border-radius:999px;
+
+    padding:
+        14px
+        34px;
+
+    min-width:120px;
+
+    min-height:50px;
+
+    font:
+        600 1rem
+        var(--sans);
+
+    cursor:pointer;
+
+    background:
+        var(--cream);
+
+    color:var(--wine);
+
+    box-shadow:
+        0 12px 30px
+        rgba(30,0,4,.3);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+
+}
+
+.btn:hover{
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 18px 35px
+        rgba(30,0,4,.4);
+
+}
+
+.btn.secondary{
+
+    background:
+        transparent;
+
+    color:#fff4e9;
+
+}
+
+.no-zone{
+
+    position:relative;
+
+    width:120px;
+
+    height:52px;
+
+}
+
+.no-zone .btn{
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+}
+
+footer{
+
+    padding:
+        60px
+        20px
+        75px;
+
+    text-align:center;
+
+    background:
+        #35070b;
+
+    color:#d9b5a8;
+
+}
+
+.footer-main{
+
+    font-family:var(--sans);
+
+    font-size:.7rem;
+
+    letter-spacing:.2em;
+
+    text-transform:uppercase;
+
+}
+
+.footer-script{
+
+    margin-top:12px;
+
+    font-family:var(--script);
+
+    font-size:2.4rem;
+
+    color:#f4d4c7;
+
+}
+
+.float-heart{
+
+    position:fixed;
+
+    bottom:-50px;
+
+    z-index:1500;
+
+    pointer-events:none;
+
+    color:#ffd7d3;
+
+    animation:
+        floatUp linear forwards;
+
+    text-shadow:
+        0 0 15px
+        rgba(255,178,178,.7);
+
+}
+
+@keyframes floatUp{
+
+    to{
+
+        transform:
+            translateY(-115vh)
+            rotate(25deg);
+
+        opacity:0;
+
+    }
+
+}
+
+#celebration{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:3000;
+
+    display:none;
+
+    place-items:center;
+
+    padding:
+        24px
+        max(24px, env(safe-area-inset-right))
+        max(24px, env(safe-area-inset-bottom))
+        max(24px, env(safe-area-inset-left));
+
+    text-align:center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(132,25,34,.95),
+            rgba(45,4,9,.98)
+        );
+
+    backdrop-filter:
+        blur(8px);
+
+}
+
+#celebration.show{
+
+    display:grid;
+
+    animation:
+        celebrationIn .5s ease;
+
+}
+
+@keyframes celebrationIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+.celebrate-card{
+
+    max-width:760px;
+
+}
+
+.celebrate-card .mini{
+
+    color:var(--gold-light);
+
+    font-family:var(--sans);
+
+    font-size:.75rem;
+
+    letter-spacing:.3em;
+
+    text-transform:uppercase;
+
+}
+
+.celebrate-card h2{
+
+    margin:
+        15px 0
+        20px;
+
+    font-size:
+        clamp(
+            4.5rem,
+            14vw,
+            9rem
+        );
+
+}
+
+.celebrate-card p{
+
+    max-width:600px;
+
+    margin:auto;
+
+    font-size:
+        clamp(
+            1.3rem,
+            3vw,
+            1.8rem
+        );
+
+    line-height:1.45;
+
+}
+
+button:focus-visible,
+input:focus-visible,
+.envelope:focus-visible,
+.progress-container:focus-visible{
+
+    outline:
+        3px solid
+        var(--gold-light);
+
+    outline-offset:4px;
+
+}
+
+@media(max-width:760px){
+
+    section{
+
+        padding:
+            75px 18px;
+
+    }
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+        gap:42px;
+
+    }
+
+    .grid.reverse .visual{
+
+        order:1;
+
+    }
+
+    .grid.reverse .copy-card{
+
+        order:2;
+
+    }
+
+    .polaroid img{
+
+        height:155px;
+
+    }
+
+    .photo-frame img{
+
+        height:320px;
+
+    }
+
+    .hero::after{
+
+        font-size:20rem;
+
+    }
+
+    .music-card{
+
+        transform:none;
+
+    }
+
+    .record{
+
+        width:min(270px,75vw);
+
+    }
+
+    .music-player{
+
+        padding:13px;
+
+    }
+
+    .play-button{
+
+        width:52px;
+        height:52px;
+
+    }
+
+    .volume-row input{
+
+        width:110px;
+
+    }
+
+    .mail-scene{
+
+        min-height:350px;
+
+    }
+
+    .btn{
+
+        min-height:52px;
+
+        padding:
+            14px 28px;
+
+    }
+
+}
+
+@media(max-width:460px){
+
+    section{
+
+        padding:
+            65px 14px;
+
+    }
+
+    .polaroids{
+
+        gap:12px;
+
+    }
+
+    .polaroid{
+
+        padding:
+            7px
+            7px
+            30px;
+
+    }
+
+    .polaroid img{
+
+        height:130px;
+
+    }
+
+    .player-top{
+
+        gap:10px;
+
+    }
+
+    .song-name{
+
+        font-size:.82rem;
+
+    }
+
+    .envelope{
+
+        height:205px;
+
+    }
+
+    .question-text{
+
+        font-size:
+            clamp(
+                3.5rem,
+                16vw,
+                5.5rem
+            );
+
+    }
+
+    .letter{
+
+        padding:
+            35px 24px;
+
+    }
+
+    .letter::before{
+
+        inset:8px;
+
+    }
+
+    .volume-row{
+
+        gap:7px;
+
+    }
+
+    .volume-row input{
+
+        width:100px;
+
+    }
+
+}
+
+@media(hover:none){
+
+    .photo-frame:hover,
+    .music-card:hover,
+    .envelope:hover,
+    .btn:hover,
+    .play-button:hover{
+
+        transform:none;
+
+        box-shadow:inherit;
+
+    }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:.01ms!important;
+
+        animation-iteration-count:1!important;
+
+        transition-duration:.01ms!important;
+
+        scroll-behavior:auto!important;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div
+    class="scroll-progress"
+    id="scrollProgress">
+</div>
+
+
+<main>
+
+
+<section class="hero">
+
+<div class="wrap hero-content reveal">
+
+<div class="kicker">
+A little page made just for you ♡
+</div>
+
+<h1>
+One question,<br>
+one heart.
+</h1>
+
+<p class="lead">
+Some things are too special for an ordinary message…
+so I made you this little love story.
+</p>
+
+
+<div class="photo-frame">
+
+<img
+    src="images/MY loive.jpeg"
+    alt="Our favorite picture together"
+>
+
+<div class="photo-caption">
+my favorite person ♡
+</div>
+
+</div>
+
+
+<div class="kicker">
+turn the page, sweetheart
+</div>
+
+
+<div class="scroll-indicator">
+
+<span>
+scroll to continue
+</span>
+
+<div class="scroll-line"></div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="scrap">
+
+<div class="wrap grid">
+
+
+<div class="copy-card reveal">
+
+<div class="kicker">
+Chapter one · us
+</div>
+
+<h2>
+My favorite person
+</h2>
+
+<p>
+Of all the little moments life could have given me,
+I'm so glad some of them led me to you.
+You make ordinary days feel like something worth
+keeping forever.
+</p>
+
+</div>
+
+
+<div class="visual polaroids reveal">
+
+
+<div class="polaroid">
+
+<img
+    src="images/our-photo.jpg"
+    alt="Our memory"
+>
+
+<span>
+the little things ♡
+</span>
+
+</div>
+
+
+<div class="polaroid">
+
+<img
+    src="images/us1.jpeg"
+    alt="A favorite memory"
+>
+
+<span>
+you + me
+</span>
+
+</div>
+
+
+<div class="polaroid">
+
+<img
+    src="images/us2.jpeg"
+    alt="A sweet moment"
+>
+
+<span>
+my safe place
+</span>
+
+</div>
+
+
+<div class="polaroid">
+
+<img
+    src="images/us3.jpeg"
+    alt="A memory to keep"
+>
+
+<span>
+always smiling
+</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="scrap alt">
+
+<div class="wrap grid reverse">
+
+
+<div class="visual music-card reveal">
+
+
+<div class="record" id="record">
+
+<img
+    src="images/Kristine.png"
+    alt="A special memory of you"
+>
+
+</div>
+
+
+<p class="script music-title">
+This song reminds me of you
+</p>
+
+<p class="music-subtitle">
+♪ our little soundtrack ♪
+</p>
+
+
+<div class="music-player">
+
+
+<div class="player-top">
+
+
+<button
+    class="play-button"
+    id="playButton"
+    type="button"
+    aria-label="Play our song"
+>
+▶
+</button>
+
+
+<div class="player-info">
+
+
+<div class="song-name">
+Our Little Soundtrack ♡
+</div>
+
+
+<div
+    class="progress-container"
+    id="progressContainer"
+    role="slider"
+    aria-label="Song progress"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="0"
+    aria-valuetext="0 percent"
+    tabindex="0"
+>
+
+<div
+    class="progress-bar"
+    id="progressBar">
+</div>
+
+</div>
+
+
+<div class="time-row">
+
+<span id="currentTime">
+0:00
+</span>
+
+<span id="duration">
+0:00
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="volume-row">
+
+<span id="volumeIcon">
+🔊
+</span>
+
+<input
+    type="range"
+    id="volumeSlider"
+    min="0"
+    max="100"
+    value="100"
+    aria-label="Volume"
+>
+
+</div>
+
+</div>
+
+
+<p class="play-hint" id="playHint">
+♡ Press play to hear our song ♡
+</p>
+
+
+<!-- YOUR LOCAL MUSIC FILE -->
+
+<audio
+    id="audioPlayer"
+    preload="metadata"
+    src="music/www.mp3"
+>
+</audio>
+
+
+</div>
+
+
+<div class="copy-card reveal">
+
+<div class="kicker">
+Chapter two · the feeling
+</div>
+
+<h2>
+Every love song
+</h2>
+
+<p>
+Somehow, every sweet lyric makes a little more sense
+when I think of you. If I could save one feeling and
+replay it forever, it would be the feeling of being
+with you.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<section class="scrap">
+
+<div class="wrap">
+
+
+<div class="letter reveal">
+
+
+<div
+    class="kicker"
+    style="
+        text-align:center;
+        color:#a34a4a;
+    "
+>
+A letter from my heart
+</div>
+
+
+<h2>
+Dear you,
+</h2>
+
+
+<p>
+I might not always find the perfect words,
+but I hope you can feel how much you mean to me.
+
+You make me smile in ways I can't explain,
+and even the simplest moments become special
+when you're part of them.
+
+I want to keep learning about you,
+cheering for you,
+making memories with you,
+and choosing you through the little things.
+
+So, there's one question I've been wanting
+to ask you…
+</p>
+
+
+<div class="signature">
+With all my heart, yours ♡
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="scrap alt">
+
+<div
+    class="wrap"
+    style="text-align:center;"
+>
+
+
+<div class="kicker">
+You got an mail! 💌
+</div>
+
+
+<h2 style="margin-top:15px;">
+A tiny letter, just for you
+</h2>
+
+
+<p class="lead">
+Tap the envelope to open the most important question.
+</p>
+
+
+<div class="mail-scene">
+
+
+<div
+    class="envelope"
+    id="envelope"
+    role="button"
+    tabindex="0"
+    aria-label="Open the envelope"
+>
+
+
+<div class="flap"></div>
+
+
+<div class="seal">
+♥
+</div>
+
+
+</div>
+
+</div>
+
+
+<div
+    id="question"
+    style="display:none;"
+>
+
+
+<div class="kicker">
+One last thing…
+</div>
+
+
+<h1 class="question-text">
+Will you be<br>
+my girlfriend? ❤️
+</h1>
+
+
+<p class="lead question-lead">
+I don't need a perfect story.
+I just hope I get to write the next chapter with you.
+</p>
+
+
+<div class="btn-row">
+
+
+<button
+    class="btn"
+    id="yesBtn"
+    type="button"
+>
+Yes 
+</button>
+
+
+<div class="no-zone">
+
+<button
+    class="btn secondary"
+    id="noBtn"
+    type="button"
+>
+No
+</button>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<div class="footer-main">
+Made with love, just for you ♡
+</div>
+
+<div class="footer-script">
+Our story starts here
+</div>
+
+</footer>
+
+
+</main>
+
+
+<div
+    id="celebration"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="celebrationTitle"
+>
+
+
+<div class="celebrate-card">
+
+
+<div class="mini">
+The beginning of us
+</div>
+
+
+<h2 id="celebrationTitle">
+She said YES!
+</h2>
+
+
+<p>
+You just made me the happiest person in the world.
+</p>
+
+
+<br>
+
+
+<button
+    class="btn"
+    id="closeCelebration"
+    type="button"
+>
+One more hug ♡
+</button>
+
+
+</div>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   MUSIC FILE
+========================================================= */
+
+const AUDIO_FILE = "music/www.mp3";
+
+
+/* =========================================================
+   SCROLL PROGRESS
+========================================================= */
+
+const scrollProgress =
+    document.getElementById("scrollProgress");
+
+
+function updateScrollProgress(){
+
+    const scrollTop =
+        window.scrollY;
+
+    const scrollHeight =
+        document.documentElement.scrollHeight
+        - window.innerHeight;
+
+    const percentage =
+        scrollHeight > 0
+        ? (scrollTop / scrollHeight) * 100
+        : 0;
+
+    scrollProgress.style.width =
+        percentage + "%";
+
+}
+
+
+window.addEventListener(
+    "scroll",
+    updateScrollProgress,
+    { passive:true }
+);
+
+updateScrollProgress();
+
+
+/* =========================================================
+   SCROLL REVEALS
+========================================================= */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+const revealObserver =
+    new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    entry.target.classList.add(
+                        "visible"
+                    );
+
+                    revealObserver.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold:.12
+        }
+
+    );
+
+
+revealElements.forEach(
+    element =>
+        revealObserver.observe(element)
+);
+
+
+/* =========================================================
+   ENVELOPE
+========================================================= */
+
+const envelope =
+    document.getElementById("envelope");
+
+const question =
+    document.getElementById("question");
+
+
+let letterOpened = false;
+
+
+function openLetter(){
+
+    if(letterOpened){
+
+        return;
+
+    }
+
+    letterOpened = true;
+
+    envelope.classList.add("open");
+
+
+    setTimeout(() => {
+
+        question.style.display =
+            "block";
+
+        question.scrollIntoView({
+
+            behavior:"smooth",
+
+            block:"center"
+
+        });
+
+    },650);
+
+}
+
+
+envelope.addEventListener(
+    "click",
+    openLetter
+);
+
+
+envelope.addEventListener(
+    "keydown",
+    event => {
+
+        if(
+            event.key === "Enter" ||
+            event.key === " "
+        ){
+
+            event.preventDefault();
+
+            openLetter();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   NO BUTTON
+========================================================= */
+
+const noBtn =
+    document.getElementById("noBtn");
+
+const noZone =
+    document.querySelector(".no-zone");
+
+
+function dodge(){
+
+    const zoneWidth =
+        noZone.clientWidth;
+
+    const zoneHeight =
+        noZone.clientHeight;
+
+    const buttonWidth =
+        noBtn.offsetWidth;
+
+    const buttonHeight =
+        noBtn.offsetHeight;
+
+
+    const maxX =
+        Math.max(
+            10,
+            zoneWidth - buttonWidth
+        );
+
+    const maxY =
+        Math.max(
+            0,
+            zoneHeight - buttonHeight
+        );
+
+
+    const x =
+        Math.random() * maxX;
+
+    const y =
+        Math.random() * maxY;
+
+
+    noBtn.style.transform =
+        `translate(${x}px, ${y}px)`;
+
+}
+
+
+noBtn.addEventListener(
+    "pointerenter",
+    dodge
+);
+
+
+noBtn.addEventListener(
+    "pointerdown",
+    event => {
+
+        event.preventDefault();
+
+        dodge();
+
+    }
+);
+
+
+noBtn.addEventListener(
+    "click",
+    event => {
+
+        event.preventDefault();
+
+        dodge();
+
+    }
+);
+
+
+/* =========================================================
+   YES BUTTON
+========================================================= */
+
+const yesBtn =
+    document.getElementById("yesBtn");
+
+const celebration =
+    document.getElementById("celebration");
+
+
+yesBtn.addEventListener(
+    "click",
+    () => {
+
+        celebration.classList.add(
+            "show"
+        );
+
+
+        for(
+            let i = 0;
+            i < 55;
+            i++
+        ){
+
+            setTimeout(
+                makeHeart,
+                i * 30
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   CLOSE CELEBRATION
+========================================================= */
+
+document
+    .getElementById("closeCelebration")
+    .addEventListener(
+        "click",
+        () => {
+
+            celebration.classList.remove(
+                "show"
+            );
+
+        }
+    );
+
+
+/* =========================================================
+   FLOATING HEARTS
+========================================================= */
+
+function makeHeart(){
+
+    const heart =
+        document.createElement("span");
+
+
+    heart.className =
+        "float-heart";
+
+
+    heart.textContent =
+        [
+            "♡",
+            "♥",
+            "💗",
+            "💕"
+        ][
+            Math.floor(
+                Math.random() * 4
+            )
+        ];
+
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+
+    heart.style.fontSize =
+        16 +
+        Math.random() * 25 +
+        "px";
+
+
+    heart.style.animationDuration =
+        4 +
+        Math.random() * 5 +
+        "s";
+
+
+    document.body.appendChild(
+        heart
+    );
+
+
+    setTimeout(
+        () => heart.remove(),
+        9500
+    );
+
+}
+
+
+/* =========================================================
+   BACKGROUND HEARTS
+========================================================= */
+
+setInterval(
+    () => {
+
+        if(
+            Math.random() > .55
+        ){
+
+            makeHeart();
+
+        }
+
+    },
+    1300
+);
+
+
+/* =========================================================
+   MP3 MUSIC PLAYER
+========================================================= */
+
+const audioPlayer =
+    document.getElementById("audioPlayer");
+
+const playButton =
+    document.getElementById("playButton");
+
+const progressBar =
+    document.getElementById("progressBar");
+
+const progressContainer =
+    document.getElementById(
+        "progressContainer"
+    );
+
+const currentTimeText =
+    document.getElementById(
+        "currentTime"
+    );
+
+const durationText =
+    document.getElementById(
+        "duration"
+    );
+
+const volumeSlider =
+    document.getElementById(
+        "volumeSlider"
+    );
+
+const volumeIcon =
+    document.getElementById(
+        "volumeIcon"
+    );
+
+const playHint =
+    document.getElementById(
+        "playHint"
+    );
+
+const musicCard =
+    document.querySelector(
+        ".music-card"
+    );
+
+
+/* =========================================================
+   SET MUSIC SOURCE
+========================================================= */
+
+audioPlayer.src =
+    AUDIO_FILE;
+
+audioPlayer.volume =
+    Number(
+        volumeSlider.value
+    ) / 100;
+
+
+/* =========================================================
+   PLAY / PAUSE
+========================================================= */
+
+playButton.addEventListener(
+    "click",
+    async () => {
+
+        try{
+
+            if(audioPlayer.paused){
+
+                await audioPlayer.play();
+
+            }else{
+
+                audioPlayer.pause();
+
+            }
+
+        }catch(error){
+
+            console.error(
+                "Music could not play:",
+                error
+            );
+
+            playHint.textContent =
+                "The music file could not be played. Check music/www.mp3.";
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   MUSIC PLAYING
+========================================================= */
+
+audioPlayer.addEventListener(
+    "play",
+    () => {
+
+        playButton.textContent =
+            "❚❚";
+
+        playButton.setAttribute(
+            "aria-label",
+            "Pause our song"
+        );
+
+        musicCard.classList.add(
+            "playing"
+        );
+
+        playHint.textContent =
+            "♪ Playing our little soundtrack ♡";
+
+    }
+);
+
+
+/* =========================================================
+   MUSIC PAUSED
+========================================================= */
+
+audioPlayer.addEventListener(
+    "pause",
+    () => {
+
+        playButton.textContent =
+            "▶";
+
+        playButton.setAttribute(
+            "aria-label",
+            "Play our song"
+        );
+
+        musicCard.classList.remove(
+            "playing"
+        );
+
+        if(
+            audioPlayer.currentTime > 0 &&
+            !audioPlayer.ended
+        ){
+
+            playHint.textContent =
+                "♡ Press play to continue ♡";
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   MUSIC ENDED
+========================================================= */
+
+audioPlayer.addEventListener(
+    "ended",
+    () => {
+
+        playButton.textContent =
+            "▶";
+
+        playButton.setAttribute(
+            "aria-label",
+            "Replay our song"
+        );
+
+        musicCard.classList.remove(
+            "playing"
+        );
+
+        progressBar.style.width =
+            "0%";
+
+        currentTimeText.textContent =
+            "0:00";
+
+        playHint.textContent =
+            "♡ Play it again ♡";
+
+    }
+);
+
+
+/* =========================================================
+   MUSIC LOADED
+========================================================= */
+
+audioPlayer.addEventListener(
+    "loadedmetadata",
+    () => {
+
+        durationText.textContent =
+            formatTime(
+                audioPlayer.duration
+            );
+
+    }
+);
+
+
+/* =========================================================
+   MUSIC PROGRESS
+========================================================= */
+
+audioPlayer.addEventListener(
+    "timeupdate",
+    () => {
+
+        const current =
+            audioPlayer.currentTime;
+
+        const duration =
+            audioPlayer.duration;
+
+
+        if(
+            duration &&
+            isFinite(duration)
+        ){
+
+            const percentage =
+                (current / duration) * 100;
+
+
+            progressBar.style.width =
+                percentage + "%";
+
+
+            progressContainer.setAttribute(
+                "aria-valuenow",
+                percentage.toFixed(0)
+            );
+
+
+            progressContainer.setAttribute(
+                "aria-valuetext",
+                `${percentage.toFixed(0)} percent`
+            );
+
+        }
+
+
+        currentTimeText.textContent =
+            formatTime(current);
+
+    }
+);
+
+
+/* =========================================================
+   FORMAT TIME
+========================================================= */
+
+function formatTime(seconds){
+
+    if(
+        !seconds ||
+        !isFinite(seconds)
+    ){
+
+        return "0:00";
+
+    }
+
+
+    const minutes =
+        Math.floor(
+            seconds / 60
+        );
+
+
+    const secondsPart =
+        Math.floor(
+            seconds % 60
+        )
+        .toString()
+        .padStart(2,"0");
+
+
+    return `${minutes}:${secondsPart}`;
+
+}
+
+
+/* =========================================================
+   SEEK WITH MOUSE / TOUCH
+========================================================= */
+
+function seekMusic(event){
+
+    const duration =
+        audioPlayer.duration;
+
+
+    if(
+        !duration ||
+        !isFinite(duration)
+    ){
+
+        return;
+
+    }
+
+
+    const rect =
+        progressContainer
+        .getBoundingClientRect();
+
+
+    const position =
+        event.clientX -
+        rect.left;
+
+
+    const percentage =
+        Math.max(
+            0,
+            Math.min(
+                1,
+                position / rect.width
+            )
+        );
+
+
+    audioPlayer.currentTime =
+        percentage * duration;
+
+}
+
+
+progressContainer.addEventListener(
+    "click",
+    seekMusic
+);
+
+
+/* =========================================================
+   KEYBOARD SEEKING
+========================================================= */
+
+progressContainer.addEventListener(
+    "keydown",
+    event => {
+
+        const duration =
+            audioPlayer.duration;
+
+
+        if(
+            !duration ||
+            !isFinite(duration)
+        ){
+
+            return;
+
+        }
+
+
+        const current =
+            audioPlayer.currentTime;
+
+
+        if(
+            event.key === "ArrowRight"
+        ){
+
+            event.preventDefault();
+
+            audioPlayer.currentTime =
+                Math.min(
+                    duration,
+                    current + 5
+                );
+
+        }
+
+
+        if(
+            event.key === "ArrowLeft"
+        ){
+
+            event.preventDefault();
+
+            audioPlayer.currentTime =
+                Math.max(
+                    0,
+                    current - 5
+                );
+
+        }
+
+
+        if(
+            event.key === "Home"
+        ){
+
+            event.preventDefault();
+
+            audioPlayer.currentTime =
+                0;
+
+        }
+
+
+        if(
+            event.key === "End"
+        ){
+
+            event.preventDefault();
+
+            audioPlayer.currentTime =
+                duration;
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   VOLUME
+========================================================= */
+
+volumeSlider.addEventListener(
+    "input",
+    () => {
+
+        const volume =
+            Number(
+                volumeSlider.value
+            );
+
+
+        audioPlayer.volume =
+            volume / 100;
+
+
+        if(volume === 0){
+
+            volumeIcon.textContent =
+                "🔇";
+
+        }
+
+        else if(volume < 50){
+
+            volumeIcon.textContent =
+                "🔉";
+
+        }
+
+        else{
+
+            volumeIcon.textContent =
+                "🔊";
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   AUDIO ERROR
+========================================================= */
+
+audioPlayer.addEventListener(
+    "error",
+    () => {
+
+        playHint.textContent =
+            "Music file not found. Make sure www.mp3 is inside the music folder.";
+
+        console.error(
+            "Could not load:",
+            AUDIO_FILE
+        );
+
+    }
+);
+
+
+/* =========================================================
+   ESCAPE CLOSE
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if(
+            event.key === "Escape"
+        ){
+
+            celebration.classList.remove(
+                "show"
+            );
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
